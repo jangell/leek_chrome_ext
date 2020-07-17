@@ -1,0 +1,30 @@
+{
+	"name": "Leek",
+	"version": "0.1.0",
+	"description": "Turns out Hat was in your browser the whole time!",
+	"permissions": [
+		"activeTab",
+		"storage"
+	],
+	
+	"background": {
+		"scripts": [
+			"lib/jquery-3.5.1.slim.min.js",
+			"lib/socket.io.slim.js",
+			"background.js"
+		]
+	},
+	
+	
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"run_at": "document_idle",
+			"js": [
+				"lib/jquery-3.5.1.slim.min.js",
+				"content.js"
+			]
+		}
+	],
+	"manifest_version": 2
+ }
